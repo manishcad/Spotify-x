@@ -7,7 +7,7 @@ const MusicPlayer = () => {
   const {
     audioRef,
     songs,
-    setSongs,
+    setSongs, 
     currentSong,
     currentSongIndex,
     setCurrentSongIndex,
