@@ -45,10 +45,10 @@ const Navbar = () => {
           <Link href="#" className="text-white hover:text-purple-600 transition">
             Albums
           </Link>
-          <Link href="/pricing" className="text-white hover:text-purple-600 transition">
+          <Link href="#" className="text-white hover:text-purple-600 transition">
             Hindi
           </Link>
-          <Link href="/about" className="text-white hover:text-purple-600 transition">
+          <Link href="/test" className="text-white hover:text-purple-600 transition">
             Playlist
           </Link>
         </div>
@@ -117,7 +117,7 @@ const Navbar = () => {
               Hindi
             </Link>
             <Link 
-              href="#" 
+              href="/test" 
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 py-2 hover:text-purple-600"
             >
