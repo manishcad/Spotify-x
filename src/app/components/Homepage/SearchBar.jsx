@@ -17,7 +17,7 @@ const SearchBar = ({text}) => {
   return (
     <div className='w-full h-full flex justify-center items-center'>
         <div className="homepage p-5">
-          <h1 className="title">{text}</h1>
+          <h1 className="title pt-2">{text}</h1>
         <div className="search-container">
         <input 
           type="text" 
