@@ -6,14 +6,14 @@ export async function GET(request) {
   const page = searchParams.get('page') || '1';
 
   try {
-    const response = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`,{
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Referer': 'https://www.google.com/',
-      }
+    
+    const response = await axios.get(`https://api.scraperapi.com`, {
+      params: {
+        api_key: '97bd50ae51878462e9e4f35f1fe79bd6',
+        url: `https://pagalnew.com/category/bollywood-mp3-songs/${page}`,
+        render: true, // renders JavaScript like a real browser
+        keep_headers: true, // optional, if you want to preserve your headers
+      },
     });
     const $ = cheerio.load(response.data);
     const allDetails = [];
@@ -61,7 +61,7 @@ export async function GET(request) {
     return Response.json({ allDetails: allData });
   } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ Error: 'Error fetching data' }), {
+    return new Response(JSON.stringify({ Error: 'Error fetchings data'}), {
       status: 500
     });
   }
