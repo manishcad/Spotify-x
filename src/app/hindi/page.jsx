@@ -27,6 +27,7 @@ const HindiPage = () => {
         }
     }
     useEffect(()=>{
+      console.log(albums)
         fetchAlbums()
     },[page,searchQuery])
   return (
