@@ -125,3 +125,27 @@
         text-align: center;
     }
 }
+
+
+.back-btn {
+    padding: 12px 24px;
+    background-color: #1e1e2f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00f0ff50;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .back-btn:hover {
+    background-color: #00f0ff;
+    color: #1e1e2f;
+    box-shadow: 0 0 20px #00f0ff;
+    transform: scale(1.05);
+  }
+  

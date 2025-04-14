@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import '../../styles/homepage.css';
 import { useRouter } from 'next/navigation';
-const SearchBar = () => {
+const SearchBar = ({text}) => {
     const router=useRouter()
   const [search, setSearch] = useState('');
 
@@ -17,11 +17,11 @@ const SearchBar = () => {
   return (
     <div className='w-full h-full flex justify-center items-center'>
         <div className="homepage p-5">
-          <h1 className="title">"Fuel your soul with sound"</h1>
+          <h1 className="title">{text}</h1>
         <div className="search-container">
         <input 
           type="text" 
-          placeholder="Search here..." 
+          placeholder="Search by Album name or Artist name" 
           value={search} 
           onChange={(e) => setSearch(e.target.value)}
           className="search-input"

@@ -6,7 +6,7 @@ const Homepage = () => {
 
     return (
         <>
-            <SearchBar />
+            <SearchBar text="Fuel your soul with sound"/>
             <Cards />
         </>
         

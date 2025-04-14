@@ -132,16 +132,16 @@ const MusicPlayer = () => {
         {/* Track info section - Responsive layout */}
         <div className="flex items-center gap-2 md:gap-3 w-1/4 min-w-0">
           {!isMinimized && currentSong && (
-            <div className="h-8 w-8 md:h-12 md:w-12 bg-zinc-800 rounded overflow-hidden flex-shrink-0 hidden sm:block">
-              <img 
-                src={albumCover || '/default-album-cover.jpg'} 
-                alt="Album cover" 
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "";
-                }}
-              />
-            </div>
+            <div className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 bg-zinc-800 rounded overflow-hidden flex-shrink-0">
+            <img 
+              src={albumCover || '/default-album-cover.jpg'} 
+              alt="Album cover" 
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "";
+              }}
+            />
+          </div>
           )}
           <div className="truncate min-w-0">
             <p className="text-white text-xs sm:text-sm font-medium truncate">
@@ -155,9 +155,9 @@ const MusicPlayer = () => {
           </div>
           {!isMinimized && (
             <Heart
-            size={16}
+            size={20}
             onClick={() => toggleFavorite(currentSong)}
-            className={`cursor-pointer transition-colors hidden sm:block ${
+            className={`cursor-pointer transition-colors ${
               favorites.includes(currentSong)
                 ? 'text-red-500'
                 : 'text-white hover:text-red-500'
@@ -207,14 +207,12 @@ const MusicPlayer = () => {
             />
 
             <Repeat
-                  onClick={() => {
-                    console.log("Repeat button clicked");
-                    setRepeatOne(!repeatOne);
-                  }}
-                  size={14}
-                  className={`cursor-pointer hidden sm:block transition-colors ${
-                    repeatOne ? 'text-blue-500 hover:text-blue-500' : 'text-white hover:text-blue-500'
-                  }`}/>
+              onClick={() => setRepeatOne(!repeatOne)}
+              size={14}
+              className={`cursor-pointer transition-colors ${
+                repeatOne ? 'text-blue-500' : 'text-white hover:text-blue-500'
+              }`}
+            />
             
           </div>
 

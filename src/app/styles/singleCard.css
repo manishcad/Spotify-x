@@ -1,0 +1,21 @@
+.allCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+
+  .pagination-controls button {
+    padding: 0.5rem 1rem;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+  }

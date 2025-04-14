@@ -16,7 +16,7 @@ export async function GET(req) {
     // Extract album title and image
     const title = $(".mu-o h3").first().text().trim() || "Unknown Title";
     const image = $(".song-thumbnail img").attr("src") || null;
-
+    const zip=$(".song-download a").attr("href") || null;
     let songs = [];
 
     $(".mu-o").each((index, element) => {
@@ -39,7 +39,7 @@ export async function GET(req) {
         });
     });
 
-    const albumData = { title, image, songs };
+    const albumData = { title, image, songs, zip };
 
     if (songs.length === 0) {
       return Response.json({ message: "No songs found." }, { status: 404 });

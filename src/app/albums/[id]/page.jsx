@@ -50,6 +50,8 @@ const AlbumDetails = () => {
             <div className="album-container">
                 <h2 className="album-title">{album.title}</h2>
                 <img src={album.image} alt={album.title} className="album-image" />
+                {album.zip && (
+                <button className="back-btn"  ><a href={album.zip}>download Zip</a></button>)}
                 <ul className="song-list">
                     {album.songs.map((song, index) => (
                         <li key={index} className="song-item">
