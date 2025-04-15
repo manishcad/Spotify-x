@@ -10,7 +10,7 @@ export default function AlbumCard({ title, image, id, link }) {
     return (
       <div className={styles.card} onClick={() => router.push(`/albums/${id}?link=${encodeURIComponent(link)}`)}>
         <div className={styles.imageWrapper}>
-          <Image src={image} alt={title} fill />
+          <Image sizes="100% " src={image} alt={title} fill />
         </div>
         <p className={styles.title}>{title}</p>
       </div>
