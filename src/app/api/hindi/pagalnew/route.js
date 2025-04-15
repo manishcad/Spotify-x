@@ -7,13 +7,12 @@ export async function GET(request) {
 
   try {
     
-    const response = await axios.get(`https://api.scraperapi.com`, {
-      params: {
-        api_key: '97bd50ae51878462e9e4f35f1fe79bd6',
-        url: `https://pagalnew.com/category/bollywood-mp3-songs/${page}`,
-        render: true, // renders JavaScript like a real browser
-        keep_headers: true, // optional, if you want to preserve your headers
-      },
+    const response = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        
+      } ,
+      
     });
     const $ = cheerio.load(response.data);
     const allDetails = [];

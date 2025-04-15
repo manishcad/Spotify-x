@@ -110,12 +110,11 @@ const Navbar = () => {
               Albums
             </Link>
             <Link 
-              href="/hindi" 
-              onClick={() => setIsMenuOpen(false)}
-              className="text-gray-600 py-2 hover:text-purple-600"ssssss
-            >
-              Hindi
-            </Link>
+                href="/hindi" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-600 py-2 hover:text-purple-600"
+            />
+
             <Link 
               href="/test" 
               onClick={() => setIsMenuOpen(false)}
