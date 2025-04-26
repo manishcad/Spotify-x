@@ -13,12 +13,19 @@ export async function GET(request) {
   ];
   const userAgent = userAgents[Math.floor(Math.random() * userAgents.length)];
     
-    const {response} = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
+    const response = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
       headers: {
         'User-Agent': userAgent,
         'Referer': 'https://www.google.com/',
-        'Accept-Language': 'en-US,en;q=0.9'
-    }
+        'Accept-Language': 'en-US,en;q=0.9',
+        "sec-ch-ua": '"Chromium";v="114", "Google Chrome";v="114", "Not-A.Brand";v="24"',
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "Windows",
+          "accept-encoding": "gzip, deflate, br",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+          "connection": "keep-alive",
+          "upgrade-insecure-requests": "1"
+            }
       
     });
     const $ = cheerio.load(response.data);
