@@ -67,6 +67,7 @@ const MusicPlayer = () => {
 
   // Update currentTime when the audio is playing
   useEffect(() => {
+    console.log("Test Player is running")
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -157,11 +158,7 @@ const MusicPlayer = () => {
             <Heart
             size={20}
             onClick={() => toggleFavorite(currentSong)}
-            className={`cursor-pointer transition-colors ${
-              favorites.includes(currentSong)
-                ? 'text-red-500'
-                : 'text-white hover:text-red-500'
-            }`}
+            className={`cursor-pointer transition-colors ${favorites.includes(currentSong) ? 'fill-red-500' : 'text-white hover:text-red-500'} text-[20px] sm:text-[22px] md:text-[24px]`}
           />
           )}
         </div>
@@ -215,7 +212,14 @@ const MusicPlayer = () => {
             />
             
           </div>
-
+               {/* Timer display */}
+  {!isMinimized && (
+    <div className="flex items-center gap-1 text-xs text-zinc-400 mt-1">
+      <span>{formatTime(currentTime)}</span>
+      <span>/</span>
+      <span>{formatTime(duration)}</span>
+    </div>
+  )}
           {/* Progress bar (hide when minimized) - Adaptive height and spacing */}
           {!isMinimized && (
             <div className="w-full flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2">

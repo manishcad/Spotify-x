@@ -83,6 +83,7 @@ const MusicPlayer = () => {
   };
 
   useEffect(() => {
+    console.log("New Player is running")
     setAlbumCover(albumCover)
     if (audioRef.current) {
       audioRef.current.load();

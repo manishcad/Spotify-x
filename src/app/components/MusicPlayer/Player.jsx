@@ -22,6 +22,7 @@ const MusicPlayer = ({ albumImage, onClose }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        console.log("Player is running")
         if (!song || !audioRef.current) return;
     
         console.log("New song selected:", song.musicLink);
