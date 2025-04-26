@@ -13,7 +13,7 @@ export async function GET(request) {
   ];
   const userAgent = userAgents[Math.floor(Math.random() * userAgents.length)];
     
-    const response = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
+    const {response} = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
       headers: {
         'User-Agent': userAgent,
         'Referer': 'https://www.google.com/',
