@@ -72,8 +72,8 @@ export const MusicPlayerProvider = ({ children }) => {
     if (!newSong || !audioRef.current) return;
   
     console.log("Playing song:", {
-      songName: newSong.songName,
-      musicLink: newSong.musicLink
+      songName: newSong?.songName,
+      musicLink: newSong?.musicLink
     });
   
     try {
@@ -84,38 +84,40 @@ export const MusicPlayerProvider = ({ children }) => {
       }
   
       setSongs(songList);
-      
+  
       // Set new song source
-      audioRef.current.src = newSong.musicLink;
+      audioRef.current.src = newSong.musicLink || newSong.downloadLink;
   
-      // Try playing immediately
-      const playAttempt = audioRef.current.play();
+      // Make sure the audio element is ready
+      const handlePlay = async () => {
+        try {
+          await audioRef.current.play();
+          setIsPlaying(true);
+          console.log("Playback started successfully!");
+        } catch (error) {
+          console.error("Playback failed. Waiting for load event...", error);
+          // If play fails, wait for metadata to load, then try again
+          audioRef.current.onloadeddata = async () => {
+            try {
+              await audioRef.current.play();
+              setIsPlaying(true);
+            } catch (error) {
+              console.error("Error playing song:", error);
+              setIsPlaying(false);
+            }
+          };
+        }
+      };
   
-      if (playAttempt !== undefined) {
-        playAttempt
-          .then(() => {
-            console.log("Playback started successfully!");
-          })
-          .catch((error) => {
-            console.error("Playback failed. Waiting for load event...", error);
+      // Try playing the song right away
+      await handlePlay();
   
-            // If play fails, wait for metadata to load, then try again
-            audioRef.current.onloadeddata = async () => {
-              try {
-                await audioRef.current.play();
-                setIsPlaying(true);
-              } catch (error) {
-                console.error("Error playing song:", error);
-                setIsPlaying(false);
-              }
-            };
-          });
-      }
     } catch (error) {
       console.error("Error playing song:", error);
       setIsPlaying(false);
     }
   };
+  
   
   
 

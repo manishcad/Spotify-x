@@ -16,6 +16,8 @@ export async function GET(request) {
 
     const response = await axios.get(`https://pagalnew.com/category/bollywood-mp3-songs/${page}`, {
       timeout: 10000, // 10 seconds timeout
+     
+    
       headers: {
         'User-Agent': userAgent,
         'Referer': 'https://www.google.com/',
