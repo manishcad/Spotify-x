@@ -1,4 +1,4 @@
-# 🎵 StellarBeat — A Stylish Music Player Web App
+# 🎵 Sonic-waves — A Stylish Music Player Web App
 
 ![StellarBeat Banner](./public/banner.png)
 
