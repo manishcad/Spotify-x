@@ -38,3 +38,5 @@ This project is perfect for music lovers who want a visually appealing and fully
 
 > Add screenshots here when you’re ready!
 ![Sonic-Waves Banner](./public/screenshot2.png)
+![Sonic-Waves Banner](./public/screenshot3.png)
+> ![Sonic-Waves Banner](./public/screenshot4.png)
