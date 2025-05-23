@@ -2,7 +2,7 @@
 
 ![Sonic-Waves Banner](./public/sonicgithub.png)
 
-StellarBeat is a futuristic, neon-styled music player built with Next.js 15, PostgreSQL, and Prisma. It offers a sleek and immersive user experience with glowing UI elements, smooth transitions, and essential music features like play, pause, shuffle, and repeat.
+Sonic-Waves is a futuristic, neon-styled music player built with Next.js 15, PostgreSQL, and Prisma. It offers a sleek and immersive user experience with glowing UI elements, smooth transitions, and essential music features like play, pause, shuffle, and repeat.
 
 This project is perfect for music lovers who want a visually appealing and fully functional music streaming experience on the web.
 
@@ -37,4 +37,4 @@ This project is perfect for music lovers who want a visually appealing and fully
 ## 📸 Screenshots
 
 > Add screenshots here when you’re ready!
-
+![Sonic-Waves Banner](./public/screenshot2.png)
