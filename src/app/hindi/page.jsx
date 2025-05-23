@@ -38,7 +38,7 @@ const HindiPage = () => {
         </div>
     )}
     <div className=''>
-        <SearchBar text="Looking for Boring Songs 😂" />
+        <SearchBar text="Looking for Boring Songs ? 😂" />
     </div>
     
     <div className="allCards">
