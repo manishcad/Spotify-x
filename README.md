@@ -1,5 +1,5 @@
 # 🎵 Sonic-waves — A Stylish Music Player Web App
-
+visit:https://sonic-waves.vercel.app/
 ![Sonic-Waves Banner](./public/sonicgithub.png)
 
 Sonic-Waves is a futuristic, neon-styled music player built with Next.js 15, PostgreSQL, and Prisma. It offers a sleek and immersive user experience with glowing UI elements, smooth transitions, and essential music features like play, pause, shuffle, and repeat.
